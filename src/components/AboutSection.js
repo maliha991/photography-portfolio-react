@@ -9,6 +9,7 @@ import {
 	StyledHide,
 } from "../styles";
 import { titleAnimation, fade, photoAnimation } from "../animation";
+import Wave from "./Wave";
 
 const AboutSection = () => {
 	return (
@@ -41,6 +42,7 @@ const AboutSection = () => {
 			<StyledImage>
 				<motion.img variants={photoAnimation} src={home1} alt="Photographer" />
 			</StyledImage>
+			<Wave />
 		</StyledAbout>
 	);
 };
