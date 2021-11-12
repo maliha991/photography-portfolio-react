@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+
+import Toggle from "./Toggle";
 
 const Question = ({ question }) => {
 	return (
@@ -7,10 +9,12 @@ const Question = ({ question }) => {
 			<h4> {question} </h4>
 			<div className="answer">
 				<p>Lorem ipsum dolor sit amet.</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-					modi!
-				</p>
+				<Toggle>
+					<p>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+						modi!
+					</p>
+				</Toggle>
 			</div>
 
 			<div className="faq-line"></div>

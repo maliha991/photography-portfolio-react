@@ -16,7 +16,7 @@ const Wave = () => {
 				strokeWidth="8"
 				initial={{ pathLength: 0, pathOffset: 1 }}
 				animate={{ pathLength: 1, pathOffset: 0 }}
-				transition={{ duration: 1.5 }}
+				transition={{ duration: 0.75 }}
 			/>
 		</WaveSvg>
 	);
