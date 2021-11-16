@@ -1,28 +1,38 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import { AnimateSharedLayout } from "framer-motion";
 
-import Toggle from "./Toggle";
+import { fade } from "../animation";
 
 const Question = ({ question }) => {
+	const [faqToggle, setFaqToggle] = useState(false);
 	return (
-		<StyledQuestion>
-			<h4> {question} </h4>
-			<div className="answer">
-				<p>Lorem ipsum dolor sit amet.</p>
-				<Toggle>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
-						modi!
-					</p>
-				</Toggle>
-			</div>
+		<AnimateSharedLayout>
+			<StyledQuestion
+				layout
+				onClick={() => {
+					setFaqToggle(!faqToggle);
+				}}
+			>
+				<motion.h4> {question} </motion.h4>
+				{faqToggle && (
+					<motion.div layout variants={fade} className="answer">
+						<p>Lorem ipsum dolor sit amet.</p>
 
-			<div className="faq-line"></div>
-		</StyledQuestion>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+							modi!
+						</p>
+					</motion.div>
+				)}
+				<div className="faq-line"></div>
+			</StyledQuestion>
+		</AnimateSharedLayout>
 	);
 };
 
-const StyledQuestion = styled.div`
+const StyledQuestion = styled(motion.div)`
 	padding: 3rem 0rem;
 	cursor: pointer;
 
