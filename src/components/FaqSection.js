@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
+import { AnimateSharedLayout, motion } from "framer-motion";
 
 import Question from "./Question";
 import { StyledAbout } from "../styles";
+import { useScroll } from "../hooks/useScroll";
+import { scrollReveal } from "../animation";
 
 const FaqSection = () => {
+	const [element, controls] = useScroll();
+
 	const questions = [
 		"How Do I Start?",
 		"What Products Do You Offer?",
@@ -13,15 +18,22 @@ const FaqSection = () => {
 	];
 
 	return (
-		<StyledFaq>
-			<h2>
-				Any Questions <span>FAQ</span>
-			</h2>
+		<AnimateSharedLayout>
+			<StyledFaq
+				ref={element}
+				variants={scrollReveal}
+				initial="hidden"
+				animate={controls}
+			>
+				<h2>
+					Any Questions <span>FAQ</span>
+				</h2>
 
-			{questions.map((question) => (
-				<Question question={question} />
-			))}
-		</StyledFaq>
+				{questions.map((question) => (
+					<Question question={question} />
+				))}
+			</StyledFaq>
+		</AnimateSharedLayout>
 	);
 };
 
