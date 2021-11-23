@@ -96,7 +96,7 @@ const Circle = styled(motion.div)`
 const Social = styled(motion.div)`
 	display: flex;
 	align-items: center;
-	margin-bottom: 0.5rem;
+	margin-bottom: 2rem;
 `;
 
 export default ContactUs;
