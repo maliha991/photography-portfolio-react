@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { AnimateSharedLayout, motion } from "framer-motion";
 
 import Question from "./Question";
-import { StyledAbout } from "../styles";
+import { StyledAbout, StyledHide } from "../styles";
 import { useScroll } from "../hooks/useScroll";
 import { scrollReveal } from "../animation";
 
@@ -18,22 +18,24 @@ const FaqSection = () => {
 	];
 
 	return (
-		<AnimateSharedLayout>
-			<StyledFaq
-				ref={element}
-				variants={scrollReveal}
-				initial="hidden"
-				animate={controls}
-			>
-				<h2>
-					Any Questions <span>FAQ</span>
-				</h2>
+		<StyledHide>
+			<AnimateSharedLayout>
+				<StyledFaq
+					ref={element}
+					variants={scrollReveal}
+					initial="hidden"
+					animate={controls}
+				>
+					<h2>
+						Any Questions <span>FAQ</span>
+					</h2>
 
-				{questions.map((question) => (
-					<Question question={question} />
-				))}
-			</StyledFaq>
-		</AnimateSharedLayout>
+					{questions.map((question) => (
+						<Question question={question} />
+					))}
+				</StyledFaq>
+			</AnimateSharedLayout>
+		</StyledHide>
 	);
 };
 
