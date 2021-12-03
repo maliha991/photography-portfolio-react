@@ -16,6 +16,7 @@ import {
 } from "../animation";
 import { StyledHide } from "../styles";
 import { useScroll } from "../hooks/useScroll";
+import ScrollTop from "../components/ScrollTop";
 
 const OurWork = () => {
 	const [element, controls] = useScroll();
@@ -70,6 +71,7 @@ const OurWork = () => {
 					<img src={goodtimes} alt="good-times" />
 				</Link>
 			</StyledMovie>
+			<ScrollTop />
 		</StyledWork>
 	);
 };
