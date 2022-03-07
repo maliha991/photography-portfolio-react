@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import home1 from "../img/home1.png";
@@ -36,7 +37,9 @@ const AboutSection = () => {
 					have professionals with amazing skills.
 				</motion.p>
 
-				<motion.button variants={fade}>Contact Us</motion.button>
+				<Link to="/contact">
+					<motion.button variants={fade}>Contact Us</motion.button>
+				</Link>
 			</StyledDescription>
 
 			<StyledImage>
